@@ -1,3 +1,3 @@
 # Course Platform
 <p align="center">Home Page</p>
-<img src="./homePage.png">
+<img src="./x-docs/homePage.png">
