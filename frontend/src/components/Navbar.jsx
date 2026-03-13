@@ -10,14 +10,14 @@ const NavigationBar = () => {
     <Navbar bg="white" expand="lg">
       <Container>
         <Navbar.Brand href="/">
-          <img
+          {/* <img
             src={logo}
             width="40"
             height="40"
             className="d-inline-block align-top"
             alt="Logo"
-          />
-          <span className="logo_name">Portail Universitaire</span>
+          /> */}
+          <span className="logo_name">Platforme Universitaire</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

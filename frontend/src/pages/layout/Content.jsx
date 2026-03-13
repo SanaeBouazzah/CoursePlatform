@@ -14,11 +14,10 @@ const CoursesPage = () => {
   };
 
   return (
-    <>
+    <div className="layout-shell">
       <header className="topbar">
         <div className="topbar-left">
           <span className="app-title">Plateforme Universitaire</span>
-          <span className="app-subtitle">Espace privé</span>
         </div>
         <div className="topbar-right">
           <div className="profile-section" onClick={() => setProfileOpen((prev) => !prev)}>
@@ -35,13 +34,13 @@ const CoursesPage = () => {
         </div>
       </header>
 
-      <div className="d-flex justify-content-start">
+      <div className="content-layout">
         <Sidebar />
         <div className="content_wrapper">
           <Outlet />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

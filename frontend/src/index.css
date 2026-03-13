@@ -1,11 +1,35 @@
-body {
+html, body, #root {
+  height: 100%;
   margin: 0;
+  overflow: hidden;
+}
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.layout-shell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.content-layout {
+  display: flex;
+  flex: 1;
+  height: calc(100% - 68px);
+  overflow: hidden;
+}
+.content_wrapper {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .logo_name{
   color:#004953;
 }
@@ -147,6 +171,9 @@ body {
 .content_wrapper{
   padding: 20px;
   width:100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .content_wrapper .add-09{
   width: 100%;

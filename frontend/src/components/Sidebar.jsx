@@ -8,13 +8,13 @@ const Sidebar = () => {
 
     return (
         <div className="border-end sidebar" style={{ width: "30%", minHeight: "100vh" }}>
-            <div className="d-flex justify-content-start align-items-center x-logo">
+            {/* <div className="d-flex justify-content-start align-items-center x-logo">
                 <div className="logoDash"><i class="fa-solid fa-book-open"></i></div>
                 <div className="p-3 title_name">
                     <h5>Plateforme</h5>
                     <small>Universitaire</small>
                 </div>
-            </div>
+            </div> */}
 
             <ul className="list-unstyled p-3 list">
 

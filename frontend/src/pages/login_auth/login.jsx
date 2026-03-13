@@ -38,6 +38,10 @@ export default function LoginForm() {
     <div className="wrapper_login">
       <div className="login-container">
         <div className="login-card">
+          <div className="auth-header">
+            <Link to="/" className="back-link">← Retour à l'accueil</Link>
+          </div>
+
           <div className="login-header">
             <h2>Sign in</h2>
             <p>Use your account to access the platform</p>

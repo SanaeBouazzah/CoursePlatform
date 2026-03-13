@@ -37,6 +37,10 @@ export default function RegisterForm() {
     <div className="wrapper_login">
       <div className="login-container">
         <div className="login-card">
+          <div className="auth-header">
+            <Link to="/" className="back-link">← Retour à l'accueil</Link>
+          </div>
+
           <div className="login-header">
             <h2>Create Account</h2>
             <p>Register to access your space</p>
