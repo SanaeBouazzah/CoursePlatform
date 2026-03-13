@@ -13,3 +13,15 @@
 <br/><br/>
 <p align="center">Organisation Page</p>
 <img src="./x-docs/organisationPage.png">
+<br/><br/>
+<p align="center">Examens Page</p>
+<img src="./x-docs/examensPage.png">
+<br/><br/>
+<p align="center">Calendrier Page</p>
+<img src="./x-docs/calendrierPage.png">
+<br/><br/>
+<p align="center">Projets Page</p>
+<img src="./x-docs/projetsPage.png">
+<br/><br/>
+<p align="center">Communication Page</p>
+<img src="./x-docs/communicationPage.png">
