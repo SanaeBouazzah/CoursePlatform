@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "69b4198106a790cf4578326b"
+  },
+  "course": {
+    "$oid": "69b158297ec93cee2300b74b"
+  },
+  "teacher": {
+    "$oid": "69b3f902c985cb10c4dfc7ea"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b419bc06a790cf4578326c"
+  },
+  "course": {
+    "$oid": "69b2a2958db7e576a255e138"
+  },
+  "teacher": {
+    "$oid": "69b3f902c985cb10c4dfc7ea"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b419d906a790cf4578326d"
+  },
+  "course": {
+    "$oid": "69b2d10e1f7c562366c5ba30"
+  },
+  "teacher": {
+    "$oid": "69b3f902c985cb10c4dfc7eb"
+  }
+}]

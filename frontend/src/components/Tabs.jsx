@@ -6,31 +6,45 @@ import { MdDownload } from "react-icons/md";
 
 const Tabs = () => {
     const [courses, setCourses] = useState([]);
+    const [syllabuses, setSyllabuses] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [activeTab, setActiveTab] = useState("courses");
+    const fetchCourses = async () => {
+        try {
+            const res = await API.get("/acceuil/resources_pedagogique/cours");
+            setCourses(res.data);
+        } catch (err) {
+            console.error("Failed to fetch courses:", err);
+            setCourses([]);
+        }
+    };
+    const fetchSyllabuses = async () => {
+        try {
+            const res = await API.get("/acceuil/resources_pedagogique/syllabus");
+            setSyllabuses(res.data);
+        } catch (err) {
+            console.error("Failed to fetch syllabuses:", err);
+            setSyllabuses([]);
+        }
+    };
+
     useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                const res = await API.get("/acceuil/resources_pedagogique/cours");
-                console.log("Fetched courses:", res.data);
-                setCourses(res.data);
-            } catch (err) {
-                console.error(err);
-            }
-        };
         fetchCourses();
+        fetchSyllabuses();
     }, []);
+
+
     const getFilteredData = () => {
         if (activeTab === "courses") {
             return courses.filter(course =>
                 course.name.toLowerCase().includes(searchTerm.toLowerCase())
             );
         }
-        // if (activeTab === "exercises") {
-        //     return exercises.filter(ex =>
-        //         ex.name.toLowerCase().includes(searchTerm.toLowerCase())
-        //     );
-        // }
+        if (activeTab === "syllabuses") {
+            return syllabuses.filter(syllabus =>
+                syllabus.title.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
         // if (activeTab === "workshops") {
         //     return workshops.filter(w =>
         //         w.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -54,6 +68,7 @@ const Tabs = () => {
         return [];
     };
     const filteredCourses = getFilteredData();
+    const filteredSyllabuses = getFilteredData();
 
     return (
         <>
@@ -62,7 +77,7 @@ const Tabs = () => {
                     <input
                         type="text"
                         placeholder="Rechercher dans les ressources..."
-                        value={searchTerm}                 
+                        value={searchTerm}
                         onChange={e => setSearchTerm(e.target.value)}
                     />
                     <i className="fa-solid fa-magnifying-glass"></i>
@@ -79,8 +94,8 @@ const Tabs = () => {
                     </button>
 
                     <button
-                        className={activeTab === "exercises" ? "tab active" : "tab"}
-                        onClick={() => setActiveTab("exercises")}
+                        className={activeTab === "syllabuses" ? "tab active" : "tab"}
+                        onClick={() => setActiveTab("syllabuses")}
                     >
                         Syllabus
                     </button>
@@ -125,7 +140,7 @@ const Tabs = () => {
                                                 </div>
                                                 <div className="text-ee">
                                                     <h5>Cours {course.order} - {course.name}<strong></strong></h5>
-                                                    <p><strong>{course.document}</strong> <span> . </span>
+                                                    <p className="mt-2"><strong>{course.document}</strong> <span> . </span>
                                                         <small>
                                                             {new Date(course.createdAt).toLocaleDateString("fr-FR", {
                                                                 day: "2-digit",
@@ -151,17 +166,85 @@ const Tabs = () => {
                         </div>
                     )}
 
-                    {activeTab === "exercises" && (
+                    {activeTab === "syllabuses" && (
                         <div>
-                            <h3>Exercises</h3>
-                            <p>TD / TP exercises appear here.</p>
+                            <h4>Syllabus de classe : </h4>
+                            {filteredSyllabuses.length === 0 ? (
+                                <p>No syllabus yet. Add some syllabus in the backend first.</p>
+                            ) : (
+                                <div>
+                                    {filteredSyllabuses.map(syllabus => (
+                                        <div className="d-flex justify-content-between align-items-center course-ee mt-3">
+                                            <div className="d-flex justify-content-start align-items-center gap-3 ">
+                                                <div className="icon-ee">
+                                                    <MdMenuBook size={20} style={{ marginRight: "8px" }} />
+                                                </div>
+                                                <div className="text-ee">
+                                                    <h5>{syllabus.title}<strong></strong></h5>
+                                                    <p className="mt-2"><strong>{syllabus.description}</strong> <span> . </span>
+                                                        <small>
+                                                            {new Date(syllabus.createdAt).toLocaleDateString("fr-FR", {
+                                                                day: "2-digit",
+                                                                month: "short",
+                                                                year: "numeric"
+                                                            })}
+                                                        </small> <span> . </span><b>{syllabus.size} MB</b>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <MdDownload
+                                                    size={20}
+                                                    style={{ cursor: "pointer", marginRight: "10px", color: "#6B747B" }}
+                                                    onClick={() => window.open(syllabus.fileUrl, "_blank")}
+                                                />
+                                            </div>
+                                        </div>
+
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     )}
 
                     {activeTab === "td" && (
                         <div>
-                            <h3>Ateliers pratiques</h3>
-                            <p>Workshops content here.</p>
+                            <h4>Syllabus de classe : </h4>
+                            {filteredSyllabuses.length === 0 ? (
+                                <p>No syllabus yet. Add some syllabus in the backend first.</p>
+                            ) : (
+                                <div>
+                                    {filteredSyllabuses.map(syllabus => (
+                                        <div className="d-flex justify-content-between align-items-center course-ee mt-3">
+                                            <div className="d-flex justify-content-start align-items-center gap-3 ">
+                                                <div className="icon-ee">
+                                                    <MdMenuBook size={20} style={{ marginRight: "8px" }} />
+                                                </div>
+                                                <div className="text-ee">
+                                                    <h5>{syllabus.title}<strong></strong></h5>
+                                                    <p className="mt-2"><strong>{syllabus.description}</strong> <span> . </span>
+                                                        <small>
+                                                            {new Date(syllabus.createdAt).toLocaleDateString("fr-FR", {
+                                                                day: "2-digit",
+                                                                month: "short",
+                                                                year: "numeric"
+                                                            })}
+                                                        </small> <span> . </span><b>{syllabus.size} MB</b>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <MdDownload
+                                                    size={20}
+                                                    style={{ cursor: "pointer", marginRight: "10px", color: "#6B747B" }}
+                                                    onClick={() => window.open(syllabus.fileUrl, "_blank")}
+                                                />
+                                            </div>
+                                        </div>
+
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     )}
 

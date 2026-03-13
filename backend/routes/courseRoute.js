@@ -16,7 +16,6 @@ router.get("/:courseId", async (req, res) => {
   res.json(course);
 });
 
-// Add teacher to course
 router.post("/:courseId/teachers/:teacherId", async (req, res) => {
   const link = await CourseTeacher.create({ 
     course: req.params.courseId, 
@@ -25,13 +24,11 @@ router.post("/:courseId/teachers/:teacherId", async (req, res) => {
   res.json(link);
 });
 
-// Get all teachers of a course
 router.get("/:courseId/teachers", async (req, res) => {
   const teachers = await CourseTeacher.find({ course: req.params.courseId }).populate("teacher");
   res.json(teachers);
 });
 
-// Enroll student in course
 router.post("/:courseId/students/:studentId", async (req, res) => {
   const link = await CourseStudent.create({ 
     course: req.params.courseId, 
@@ -40,7 +37,6 @@ router.post("/:courseId/students/:studentId", async (req, res) => {
   res.json(link);
 });
 
-// Get all students of a course
 router.get("/:courseId/students", async (req, res) => {
   const students = await CourseStudent.find({ course: req.params.courseId }).populate("student");
   res.json(students);

@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "name": "ingénierie des application web et mobile",
+  "code": "IAWM",
+  "createdAt": {
+    "$date": "2026-03-11T11:54:20.179Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T11:54:20.179Z"
+  },
+  "__v": 0
+}]
