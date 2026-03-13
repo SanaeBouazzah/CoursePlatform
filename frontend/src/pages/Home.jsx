@@ -1,9 +1,12 @@
 import React from "react";
 import NavigationBar from "../components/Navbar";
 import school from "../school.jpg";
-import {Container, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./../index.css";
+import { Link } from "react-router-dom";
 
-const Home = () => {
+const HomePage = () => {
     return (
         <>
             <NavigationBar />
@@ -19,8 +22,12 @@ const Home = () => {
                                     moderne et sécurisé.
                                 </p>
                                 <div className="btn2">
-                                    <Button className="">Commencer Maintenant</Button>
-                                    <Button className="">En Savoir Plus</Button>
+                                    <Link className="w-40 text-start" to="/acceuil">
+                                        <Button className="">Commencer Maintenant</Button>
+                                    </Link>
+                                    <Link className="w-100 text-start" to="/acceuil/resources_pedagogique/cours">
+                                        <Button className="">En Savoir Plus</Button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="school_image">
@@ -40,4 +47,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomePage;
