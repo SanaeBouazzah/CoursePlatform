@@ -122,7 +122,6 @@ const Tabs = () => {
                     </button>
                 </div>
 
-                {/* Tabs content */}
                 <div className="tabs-content">
 
                     {activeTab === "courses" && (
