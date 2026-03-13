@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "69b3f8a1c985cb10c4dfc7e8"
+  },
+  "name": "Nouran Moutaki",
+  "email": "noran@example.com",
+  "role": "student",
+  "major_id": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "password": "$2b$10$AT08NA6yQNxaJa/eBKBrbeDn4FPIejAArN13FfuaLQnGlnCy/NqKi"
+},
+{
+  "_id": {
+    "$oid": "69b3f8a1c985cb10c4dfc7e9"
+  },
+  "name": "Ilyass Assif",
+  "email": "ilyass@example.com",
+  "role": "student",
+  "major_id": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "password": "$2b$10$o8wHVnH/WGE9jFMSBB..NuTXG1ckoWiSh80oQ/Bfjcb4cGwCDMLGK"
+},
+{
+  "_id": {
+    "$oid": "69b3f902c985cb10c4dfc7ea"
+  },
+  "name": "Halim Fassi",
+  "email": "halim@example.com",
+  "role": "teacher",
+  "major_id": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "password": "$2b$10$5R1hJmwJsUGYzKr/nr/BcuJefooeyi1KZmt86CT6oxdARQxJSsAxm"
+},
+{
+  "_id": {
+    "$oid": "69b3f902c985cb10c4dfc7eb"
+  },
+  "name": "Mourad Safi",
+  "email": "mourad@example.com",
+  "role": "teacher",
+  "major_id": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "password": "$2b$10$8czLl6ApC1izigHS0DmjP.Fk1zjgf8p4FptvDDBLs.8qAycHD9EbK"
+},
+{
+  "_id": {
+    "$oid": "69b4581543d817ae59cdf0e2"
+  },
+  "name": "Ahmed Ali",
+  "email": "ahmed@test.com",
+  "role": "teacher",
+  "password": "$2b$10$MZW/xAQNbzrWPI2hMCOcyuYf9KXIhCqSHak8aKZH3apFoy8vB7Sqa",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b46b14b898804c556aa14d"
+  },
+  "name": "Ali Taki",
+  "email": "ali@test.com",
+  "role": "teacher",
+  "password": "$2b$10$X/Ts4W791Sp2JFj0GIsdE.h4k5Wk5fVPM7fdY1uLwug916bBjsOhW",
+  "__v": 0
+}]

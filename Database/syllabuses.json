@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "69b481a35b0872280fa318a6"
+  },
+  "title": "Introduction à JavaScript",
+  "description": "Présentation des bases de JavaScript",
+  "week": 1,
+  "order": 1,
+  "document": "PDF",
+  "semester": {
+    "$oid": "69b158187ec93cee2300b749"
+  },
+  "major": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "course": {
+    "$oid": "69b2d10e1f7c562366c5ba30"
+  },
+  "createdAt": {
+    "$date": "2026-03-13T21:29:07.699Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-13T21:29:07.699Z"
+  },
+  "__v": 0
+}]

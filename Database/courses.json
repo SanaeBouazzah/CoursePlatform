@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "69b158297ec93cee2300b74b"
+  },
+  "name": "Java 101",
+  "code": "JAVA01",
+  "description": "Intro Java",
+  "semester": {
+    "$oid": "69b158187ec93cee2300b749"
+  },
+  "major": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "createdAt": {
+    "$date": "2026-03-11T11:55:21.842Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T11:55:21.842Z"
+  },
+  "__v": 0,
+  "document": "PDF",
+  "fileUrl": "http://localhost:5000/uploads/nmap.pdf",
+  "order": 1,
+  "size": 0.69
+},
+{
+  "_id": {
+    "$oid": "69b2a2958db7e576a255e138"
+  },
+  "name": "Securite",
+  "code": "SEC01",
+  "description": "Securite les applications",
+  "order": 2,
+  "document": "PDF",
+  "fileUrl": "/uploads/securite.pdf",
+  "size": 1,
+  "semester": {
+    "$oid": "69b158187ec93cee2300b749"
+  },
+  "major": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T11:25:09.937Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T11:25:09.937Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2d10e1f7c562366c5ba30"
+  },
+  "name": "JavaScript",
+  "code": "JS01",
+  "description": "Langage de programmation",
+  "order": 1,
+  "document": "PDF",
+  "fileUrl": "/uploads/javascript_introduction_f.pdf",
+  "size": 1,
+  "semester": {
+    "$oid": "69b158187ec93cee2300b749"
+  },
+  "major": {
+    "$oid": "69b157ec7ec93cee2300b747"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T14:43:26.830Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T14:43:26.830Z"
+  },
+  "__v": 0
+}]

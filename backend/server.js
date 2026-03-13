@@ -17,6 +17,8 @@ const Major = require("./models/Major");
 const Semester = require("./models/Semester");
 const Course = require("./models/Course");
 const User = require("./models/User");
+const Syllabus = require("./models/Syllabus");
+
 
 
 
@@ -27,7 +29,7 @@ const semesterRoutes = require("./routes/semesterRoute");
 const studentCoursesRoutes = require("./routes/studentRoute");
 const teacherCoursesRoutes = require("./routes/teacherRoute");
 const authRoutes = require("./routes/authRoute");
-// const userRoutes = require("./routes/userRoute");
+const syllabusRoutes = require("./routes/syllabusRoute");
 
 
 
@@ -38,7 +40,8 @@ app.use("/acceuil/resources_pedagogique/semesters", semesterRoutes);
 app.use("/student_courses", studentCoursesRoutes);
 app.use("/teacher_courses", teacherCoursesRoutes);
 app.use("/auth", authRoutes);
-// app.use("/users", userRoutes);
+app.use("/acceuil/resources_pedagogique/syllabus", syllabusRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("API running...");
@@ -49,15 +52,12 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-
-
-
-
 // Intialiser Data Major, Semester, Courses
-
 app.get("/test-insert-major", async (req, res) => {
   try {
     const major = new Major({
@@ -116,3 +116,22 @@ app.get("/test-insert-user", async (req, res) => {
     res.status(500).send({ error: err.message });
   }
 });
+app.get("/test-insert-syllabus", async (req, res) => {
+  try {
+    const syllabus = new Syllabus({
+      title: "Introduction à JavaScript",
+      description: "Présentation des bases de JavaScript",
+      week: 1,
+      course: "69b2d10e1f7c562366c5ba30",
+      teacher: "69b3f902c985cb10c4dfc7ea", 
+      major: "69b157ec7ec93cee2300b747",   
+      semester: "69b158187ec93cee2300b749",                       
+    });
+
+    await syllabus.save();
+    res.send({ message: "Syllabus inserted!", syllabus });
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
+});
+
