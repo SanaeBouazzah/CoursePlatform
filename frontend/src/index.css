@@ -304,3 +304,14 @@ body {
   font-weight: 900;
   padding: 5px;
 }
+.topbar { display: flex; justify-content: space-between; align-items: center; background: #fff; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; position: sticky; top: 0; z-index: 10; }
+.topbar-left { display: flex; align-items: baseline; gap: 8px; }
+.app-title { margin-right: 8px; font-weight: 700; color: #0f172a; }
+.app-subtitle { color: #475569; font-size: 0.85rem; }
+.topbar-right { position: relative; }
+.profile-section { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0; border-radius: 999px; padding: 4px 10px; cursor: pointer; background: #f9fafb; }
+.avatar { height: 28px; width: 28px; border-radius: 50%; background: #2563eb; color: #fff; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; font-size: 0.78rem; }
+.profile-name { font-weight: 600; color: #111827; }
+.profile-dropdown { position: absolute; right: 0; top: 42px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; box-shadow: 0 10px 28px rgba(0,0,0,0.12); width: 170px; z-index: 30; }
+.menu-item { width: 100%; background:none; border:none; text-align:left; padding: 10px 12px; color:#111827; cursor:pointer; font-size: 0.92rem; }
+.menu-item:hover { background:#f8fafc; }

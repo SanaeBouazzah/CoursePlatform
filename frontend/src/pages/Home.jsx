@@ -22,11 +22,11 @@ const HomePage = () => {
                                     moderne et sécurisé.
                                 </p>
                                 <div className="btn2">
-                                    <Link className="w-40 text-start" to="/acceuil">
+                                    <Link className="w-40 text-start" to="/auth/login">
                                         <Button className="">Commencer Maintenant</Button>
                                     </Link>
-                                    <Link className="w-100 text-start" to="/acceuil/resources_pedagogique/cours">
-                                        <Button className="">En Savoir Plus</Button>
+                                    <Link className="w-100 text-start" to="/auth/register">
+                                        <Button className="">Créer un compte</Button>
                                     </Link>
                                 </div>
                             </div>
