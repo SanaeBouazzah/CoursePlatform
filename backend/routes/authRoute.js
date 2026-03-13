@@ -7,8 +7,8 @@ const User = require("../models/User");
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
-    if (!name || !email || !password || !role) {
-      return res.status(400).json({ message: "Name, email, password, and role are required" });
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: "Name, email, and password are required" });
     }
 
     const existingUser = await User.findOne({ email });
@@ -16,7 +16,7 @@ router.post("/register", async (req, res) => {
       return res.status(409).json({ message: "User already exists" });
     }
 
-    const newUser = new User({ name, email, password, role });
+    const newUser = new User({ name, email, password, role: role || "student" });
     await newUser.save();
 
     const token = jwt.sign(

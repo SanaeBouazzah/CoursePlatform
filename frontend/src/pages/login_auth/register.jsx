@@ -7,7 +7,6 @@ export default function RegisterForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("student");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ export default function RegisterForm() {
     }
 
     try {
-      const response = await API.post("/auth/register", { name, email, password, role });
+      const response = await API.post("/auth/register", { name, email, password });
       const data = response.data;
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
@@ -60,15 +59,6 @@ export default function RegisterForm() {
               <div className="input-wrapper">
                 <label htmlFor="password">Password</label>
                 <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="input-wrapper">
-                <label htmlFor="role">Role</label>
-                <select id="role" className="form-select" value={role} onChange={(e) => setRole(e.target.value)}>
-                  <option value="student">Student</option>
-                  <option value="teacher">Teacher</option>
-                </select>
               </div>
             </div>
 
