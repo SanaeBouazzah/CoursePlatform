@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import Tabs from "../../components/Tabs";
 
 const CoursesPage = () => {
